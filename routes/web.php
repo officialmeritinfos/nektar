@@ -25,6 +25,7 @@ Route::get('plan',[HomeController::class,'plans']);
 Route::get('terms',[HomeController::class,'terms']);
 Route::get('terms',[HomeController::class,'terms']);
 Route::get('services',[HomeController::class,'services']);
+Route::get('service',[HomeController::class,'services']);
 Route::get('service/{id}/details',[HomeController::class,'serviceDetail'])
     ->name('service.details');
 Route::get('faqs',[HomeController::class,'faqs']);

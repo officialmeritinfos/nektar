@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zxx">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
@@ -41,113 +40,129 @@
 <!-- welcome content start from here -->
 
 <!-- header end -->
-<header class="header header-1 header-3">
-    <div class="top-header d-none d-xl-block">
-        <div class="container">
+<header class="header-1 header-4">
+
+    <div class="top-header top-header-2">
+        <div class="container-fluid">
             <div class="row align-items-center">
-                <div class="col-4">
-                    <div class="header-right-socail d-flex align-items-center">
-                        <h6 class="font-la color-white fw-normal">Follow On:</h6>
-
-                        <div class="social-profile">
-                            <ul>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                            </ul>
-                        </div>
+                <div class="col-4 col-md-2  d-none d-xl-block">
+                    <div class="logo">
+                        <a href="{{url('/')}}">
+                            <img src="{{asset('home/images/'.$web->logo)}}" alt="logo">
+                        </a>
                     </div>
                 </div>
-
-                <div class="col-8">
-                    <div class="header-cta d-flex justify-content-end">
-                        <ul>
-                            @if(!empty($web->phone))
-                                <li><a><i class="icon-phone"></i> {{$web->phone}}</a></li>
-                            @endif
-                            <li><a href="mailto:{{$web->email}}"><i class="icon-email"></i>{{$web->email}}</a></li>
-                            <li><a><i class="fal fa-clock"></i> Mon – Sun: 24 Hrs</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="main-header-wraper">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="header-logo">
-                            <div class="logo">
-                                <a href="{{url('/')}}">
-                                    <img src="{{asset('home/images/'.$web->logo)}}" alt="logo">
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="header-menu d-none d-xl-block">
-                            <div class="main-menu">
-                                <ul>
-                                    <li>
-                                        <a href="{{url('/')}}">Home</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{url('about')}}">About</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Our Services</a>
+                <div class=" col-md-12 col-xl-10">
+                    <div class="row">
+                        <div class="col-12 d-none d-xl-block">
+                            <div class="row align-items-center py-2">
+                                <div class="col-9">
+                                    <div class="header-cta">
                                         <ul>
-                                            @foreach($injected->getServices() as $servi)
-                                                <li><a href="{{route('service.details',['id'=>$servi->id])}}">{{$servi->title}}</a></li>
-                                            @endforeach
+                                            @if(!empty($web->phone))
+                                                <li><a><i class="icon-phone"></i> {{$web->phone}}</a></li>
+                                            @endif
+                                            <li><a href="mailto:{{$web->email}}"><i class="icon-email"></i>{{$web->email}}</a></li>
+                                            <li><a><i class="fal fa-clock"></i> Mon – Sun: 24 Hrs</a></li>
                                         </ul>
-                                    </li>
-                                    <li>
-                                        <a href="{{url('nft')}}">NFT</a>
-                                    </li>
-                                    <li>
-                                        <a>Pages</a>
-                                        <ul>
-                                            <li>
-                                                <a href="{{url('plans')}}">Pricing</a>
-                                            </li>
-                                            <li >
-                                                <a href="{{url('faqs')}}">Faqs</a>
-                                            </li>
-                                            <li>
-                                                <a href="{{url('terms')}}">Terms & Conditions</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a>Account</a>
-                                        <ul>
-                                            <li>
-                                                <a href="{{route('register')}}">Register</a>
-                                            </li>
-                                            <li >
-                                                <a href="{{route('login')}}">Login</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="{{url('contact')}}">Contact</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="header-right d-flex align-items-center">
-
-                            <a href="{{route('register')}}" class="header-btn">Create Account <i class="far fa-chevron-double-right"></i></a>
-                            <div class="mobile-nav-bar d-block ml-3 ml-sm-5 d-xl-none">
-                                <div class="mobile-nav-wrap">
-                                    <div id="hamburger">
-                                        <i class="fal fa-bars"></i>
                                     </div>
+                                </div>
+
+                                <div class="col-3">
+                                    <div class="header-right-socail d-flex justify-content-end align-items-center">
+                                        <h6 class="font-la  fw-600">Follow On:</h6>
+
+                                        <div class="social-profile">
+                                            <ul>
+                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 p-0">
+                            <div class="main-nav-menu d-flex align-items-center justify-content-between">
+                                <div class="header-logo d-xl-none d-block">
+                                    <div class="logo">
+                                        <a href="{{url('/')}}">
+                                            <img src="{{asset('home/images/'.$web->logo)}}" alt="logo">
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="header-menu d-none d-xl-block">
+                                    <div class="main-menu">
+                                        <ul>
+                                            <li>
+                                                <a href="{{url('/')}}">Home</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{url('about')}}">About</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{url('service')}}">Services</a>
+                                            </li>
+                                            <li>
+                                                <a>Pages</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="{{url('plans')}}">Pricing</a>
+                                                    </li>
+                                                    <li >
+                                                        <a href="{{url('faqs')}}">Faqs</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{{url('terms')}}">Terms & Conditions</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a>Account</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="{{route('register')}}">Register</a>
+                                                    </li>
+                                                    <li >
+                                                        <a href="{{route('login')}}">Login</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="{{url('contact')}}">Contact</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="header-right d-flex align-items-center justify-content-end">
+
+
+                                    <div class="horizontal-bar d-none d-md-block"></div>
+
+                                    @if(!empty($web->phone))
+                                        <a href="tel:{{$web->phone}}" class=" header-contact d-lg-flex d-none  align-items-center">
+                                            <div class="icon color-yellow">
+                                                <i class="icon-call"></i>
+                                            </div>
+                                            <div class="text">
+                                                <span class="font-la mb-2 d-block fw-500 text-white">Contact For Support</span>
+                                                <h5 class="fw-500 text-white">{{$web->phone}}</h5>
+                                            </div>
+                                        </a>
+                                    @endif
+                                    <a href="{{route('register')}}" class="theme-btn btn__2 bg-yellow d-none d-sm-block">Get Started <i class="far fa-chevron-double-right"></i></a>
+                                    <div class="mobile-nav-bar d-block ml-3 ml-sm-5 d-xl-none">
+                                        <div class="mobile-nav-wrap">
+                                            <div id="hamburger">
+                                                <i class="fal fa-bars"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -174,13 +189,9 @@
                     <li>
                         <a href="{{url('about')}}">About</a>
                     </li>
+
                     <li>
-                        <a href="#">Our Services</a>
-                        <ul>
-                            @foreach($injected->getServices() as $servi)
-                                <li><a href="{{route('service.details',['id'=>$servi->id])}}">{{$servi->title}}</a></li>
-                            @endforeach
-                        </ul>
+                        <a href="{{url('service')}}">Services</a>
                     </li>
                     <li>
                         <a href="{{url('nft')}}">NFT</a>
@@ -296,18 +307,42 @@
                         <li><a href="{{url('about')}}">About</a></li>
                         <li><a href="{{url('faq')}}">FAQs</a></li>
                         <li><a href="{{url('contact')}}">Contact</a></li>
+
+                        <li>
+                            <a href="{{url('service')}}">Services</a>
+                        </li>
                     </ul>
                 </div>
             </div> <!-- /.col-lg-2 - single-footer-wid -->
 
             <div class="col-md-6 col-xl-2">
                 <div class="single-footer-wid pl-xl-10 pl-50">
-                    <h4 class="wid-title mb-30 color-white">Services</h4>
-
+                    <h4 class="wid-title mb-30 color-white">Payment Solutions</h4>
+                    <span class="btn text-white">-EUROPE & AMERICA-</span>
                     <ul>
-                        @foreach($injected->getServices() as $servi)
-                            <li><a href="{{route('service.details',['id'=>$servi->id])}}">{{$servi->title}}</a></li>
-                        @endforeach
+                        <li> <a class="btn btn-link" href="https://www.kraken.com/">Kraken</a></li>
+                        <li><a class="btn btn-link" href="https://www.binance.com">Binance</a></li>
+                        <li><a class="btn btn-link" href="https://www.coinbase.com">Coinbase</a></li>
+                        <li><a class="btn btn-link" href="https://www.crypto.com">Crypto.com</a></li>
+                        <li><a class="btn btn-link" href="https://www.cash.app">Cashapp</a></li>
+                        <li><a class="btn btn-link" href="https://www.gemini.com">Gemini</a></li>
+                        <li><a class="btn btn-link" href="https://www.moonpay.com">Moonpay</a></li>
+                    </ul>
+                </div>
+            </div> <!-- /.col-lg-2 - single-footer-wid -->
+
+            <div class="col-md-6 col-xl-2">
+                <div class="single-footer-wid pl-xl-10 pl-50">
+                    <h4 class="wid-title mb-30 color-white">Payment Solutions</h4>
+                    <span class="btn text-white">- OTHERS -</span>
+                    <ul>
+                        <li><a class="btn btn-link" href="https://www.coinmama.com/">Coin Mama</a></li>
+                        <li><a class="btn btn-link" href="https://www.paybis.com/">PayBis</a></li>
+                        <li><a class="btn btn-link" href="https://www.xcoins.com">Xcoin</a></li>
+                        <li><a class="btn btn-link" href="https://indodax.com">Indodax</a></li>
+                        <li><a class="btn btn-link" href="https://coinhako.com">Coinhako</a></li>
+                        <li><a class="btn btn-link" href="https://wazirx.com">Wazirx</a></li>
+                        <li><a class="btn btn-link" href="https://zebpay.com">Zebpay</a></li>
                     </ul>
                 </div>
             </div> <!-- /.col-lg-2 - single-footer-wid -->

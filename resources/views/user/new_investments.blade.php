@@ -20,48 +20,25 @@
                             <input type="number" class="form-control form-control-lg" id="inputAddress2"
                                    placeholder="Enter Amount to Invest" name="amount">
                         </div>
-                        <div class="form-group col-md-12" style="display: none;">
-                            <label for="inputAddress2">Service</label>
-                            <input type="number" class="form-control form-control-lg" id="inputAddress2"
-                                   placeholder="Enter Amount to Invest" name="service" value="{{$service->id}}" >
-                        </div>
                         <div class="form-group col-md-12">
                             <label for="inputAddress2">Package</label>
                             <select type="number" class="form-control form-control-lg selectize" id="inputAddress2"
                                     name="package">
                                 <option value="">Select a Package</option>
-                                <optgroup label="Packages">
-                                    @foreach($packages as $package)
-                                        <option value="{{$package->id}}">
-                                            {{$package->name}}
-                                            (
-                                            ${{number_format($package->minAmount,2)}}
-                                            -
-                                            @if($package->isUnlimited ==1)
-                                                Unlimited
-                                            @else
-                                                ${{number_format($package->maxAmount)}}
-                                            @endif
-                                        )
-                                        </option>
-                                    @endforeach
-                                </optgroup>
-                                <optgroup label="VIP Package">
-                                    @foreach($vipPackages as $pack)
-                                        <option value="{{$pack->id}}">
-                                            {{$pack->name}}
-                                            (
-                                            ${{number_format($pack->minAmount,2)}}
-                                            -
-                                            @if($pack->isUnlimited ==1)
-                                                Unlimited
-                                            @else
-                                                ${{number_format($pack->maxAmount)}}
-                                            @endif
-                                        )
-                                        </option>
-                                    @endforeach
-                                </optgroup>
+                                @foreach($packages as $package)
+                                    <option value="{{$package->id}}">
+                                        {{$package->name}}
+                                        (
+                                        ${{number_format($package->minAmount,2)}}
+                                        -
+                                        @if($package->isUnlimited ==1)
+                                            Unlimited
+                                        @else
+                                            ${{number_format($package->maxAmount)}}
+                                        @endif
+                                    )
+                                    </option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group col-md-12">

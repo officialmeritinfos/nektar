@@ -19,7 +19,6 @@
                         <th>Asset</th>
                         <th>Address</th>
                         <th>Source</th>
-                        <th>Service</th>
                         <th>Roi</th>
                         <th>Current profit</th>
                         <th>Date Initiated</th>
@@ -46,7 +45,6 @@
                                     @break
                                 @endswitch
                             </td>
-                            <td>{{$injected->fetchServiceId($investment->service)->title}}</td>
                             <td>{{$investment->roi}}%</td>
                             <td>{{$investment->currentProfit}}</td>
                             <td>{{$investment->created_at}}</td>

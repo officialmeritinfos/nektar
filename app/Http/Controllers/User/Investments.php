@@ -53,20 +53,12 @@ class Investments extends Controller
         return view('user.new_investment_services',$dataView);
     }
 
-    public function newInvestment($id)
+    public function newInvestment()
     {
         $web = GeneralSetting::find(1);
         $user = Auth::user();
 
-        $service = Service::where('id',$id)->firstOrFail();
-
-        if($service->id==6) {
-            $packages = Package::where('service',$service->id)->where('isVip','!=',1)->get();
-            $vipPackages = Package::where('service',$service->id)->where('isVip',1)->get();
-        }else {
-            $packages = Package::where('service',null)->where('isVip','!=',1)->get();
-            $vipPackages = Package::where('service',null)->where('isVip',1)->get();
-        }
+        $packages = Package::where('status',1)->get();
 
 
         $dataView = [
@@ -75,9 +67,7 @@ class Investments extends Controller
             'pageName'=>'New Deposit',
             'siteName'=>$web->name,
             'packages'  => $packages,
-            'vipPackages'  => $vipPackages,
             'coins'=>Coin::where('status',1)->get(),
-            'service'=>$service
         ];
 
         return view('user.new_investments',$dataView);
@@ -92,7 +82,6 @@ class Investments extends Controller
             'account'=>['required','numeric'],
             'package'=>['required','numeric'],
             'asset'=>['required','string'],
-            'service'=>['required','integer']
         ]);
 
         if ($validator->fails()){
@@ -107,12 +96,6 @@ class Investments extends Controller
             return back()->with('error','Asset is not supported');
         }
 
-        //check if the service is supported
-        $service = Service::where('id',strtoupper($input['service']))->first();
-        if (empty($service)){
-            return back()->with('error','Service is not supported');
-        }
-        //generate deposit reference
         $reference = $this->generateId('deposits','reference',10);
         //check if the package exists
 
@@ -180,7 +163,7 @@ class Investments extends Controller
             'nextReturn'=>$nextReturn,'currentReturn'=>0,'returnType'=>$returnType->id,
             'numberOfReturns'=>$packageExists->numberOfReturns,'status'=>$status,'duration'=>$packageExists->Duration,
             'package'=>$packageExists->id,
-            'wallet'=>$coinExists->address,'asset'=>$coinExists->asset,'service'=>$service->id
+            'wallet'=>$coinExists->address,'asset'=>$coinExists->asset
         ];
 
         $investment = Investment::create($dataInvestment);
