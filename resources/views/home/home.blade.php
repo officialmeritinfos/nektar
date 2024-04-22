@@ -53,7 +53,7 @@
                                     Invest in Green, <br> <span>Reap the Reward</span>
                                 </h1>
                                 <p class="sub-title color-white mb-15 mb-sm-15 mb-xs-10 text-dark">
-                                    Make your money work for the planet. MySite offers opportunities to invest in renewable
+                                    Make your money work for the planet. {{$siteName}} offers opportunities to invest in renewable
                                     energy and enjoy financial growth. Start investing sustainably today.
                                 </p>
 
@@ -81,7 +81,7 @@
                                 <h1 class="title color-white mb-sm-30 mb-xs-20 mb-40 text-success" data-animation="fadeInUp" data-delay="1s">When Green <br> <span>Meets Growth</span></h1>
                                 <p class="sub-title color-white mb-15 mb-sm-15 mb-xs-10 text-dark">
                                     Grow your wealth while supporting renewable energy initiatives.
-                                    MySite offers a platform to invest in green projects, fostering a sustainable future for generations to come.
+                                    {{$siteName}} offers a platform to invest in green projects, fostering a sustainable future for generations to come.
                                 </p>
 
                                 <div class="theme-btn__wrapper mt-30">
@@ -186,7 +186,7 @@
                         <h5><img src="{{asset('home/img/home-5/bage.svg')}}" alt> About Us</h5>
                         <h2 class="mb-20">We help you build a Greener Future <span>Together</span></h2>
                         <p>
-                            At MySite, our journey began with a simple yet powerful vision: to empower individuals to invest in a sustainable future. Founded by a team passionate about environmental stewardship and financial innovation, we set out to create a platform where investment opportunities align with our planet's well-being.
+                            At {{$siteName}}, our journey began with a simple yet powerful vision: to empower individuals to invest in a sustainable future. Founded by a team passionate about environmental stewardship and financial innovation, we set out to create a platform where investment opportunities align with our planet's well-being.
                         </p>
                         <p>
                             Driven by our commitment to sustainability, we curated a portfolio of green energy projects that not only promise financial returns but also contribute to mitigating climate change. Our platform connects investors with renewable energy initiatives, from solar farms to wind turbines, offering a pathway to profitable and purposeful investing.
@@ -213,7 +213,7 @@
                         </div>
                     </div>
                     <p>
-                        At MySite, our core focus areas serve as the guiding principles that underpin everything we do. From investing in sustainable energy projects to engaging with local communities, promoting innovation, and upholding transparency, each aspect of our business reflects our commitment to creating positive change for our planet and society.
+                        At {{$siteName}}, our core focus areas serve as the guiding principles that underpin everything we do. From investing in sustainable energy projects to engaging with local communities, promoting innovation, and upholding transparency, each aspect of our business reflects our commitment to creating positive change for our planet and society.
                     </p>
                     <a href="{{url('about')}}" class="theme-btn btn__2">Read More <i class="fal fa-long-arrow-right"></i></a>
                 </div>
