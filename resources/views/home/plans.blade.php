@@ -85,49 +85,7 @@
                             </div>
                         </div><!-- /pricing__card -->
                     @endforeach
-                    <div class="pricing__content mb-3 mb-xs-30 text-center">
-                        <h4 class="title color-d_black mb-25 mb-sm-20 mb-xs-15 text-capitalize">VIP Packages</h4>
 
-                    </div>
-                    @foreach($vipPackages as $pack)
-                        @inject('option','App\Defaults\Custom')
-                        <div class="col-xl-4 col-md-6">
-                            <div class="pricing__card d-flex flex-column justify-content-between mb-30 overflow-hidden">
-                                <div class="pricing__card-header">
-                                    <h3 class="title color-d_black">{{$pack->name}}</h3>
-                                    <div class="price color-white mb-30 mb-sm-25 mb-xs-15 overflow-hidden">
-                                        {{$pack->roi}}%
-                                        <span>/{{$option->getReturnType($pack->returnType)}}</span></div>
-                                </div>
-                                <div class="pricing__card-body">
-                                    <ul>
-                                        <li><i class="fal fa-check-square"></i>
-                                            Min Deposit: ${{number_format($pack->minAmount,2)}}
-                                        </li>
-                                        <li><i class="fal fa-check-square"></i>
-                                            Max Deposit:  @if($pack->isUnlimited !=1)
-                                                ${{number_format($pack->maxAmount,2)}}
-                                            @else
-                                                Unlimited
-                                            @endif
-                                        </li>
-                                        <li><i class="fal fa-check-square"></i>
-                                            Daily Profit: {{$pack->roi}}%
-                                        </li>
-                                        <li><i class="fal fa-check-square"></i>
-                                            Weekly Profit: {{$pack->roi*7}}%
-                                        </li>
-                                        <li><i class="fal fa-check-square"></i>
-                                            Monthly Profit: {{$pack->roi*28}}%
-                                        </li>
-                                        <li><i class="fal fa-check-square"></i>  Duration: {{$pack->Duration}}</li>
-                                        <li><i class="fal fa-check-square"></i> Referral Bonus: {{$pack->referral}}%</li>
-                                    </ul>
-                                    <a href="{{route('register')}}" class="theme-btn mt-40 mt-md-35">Get Started <i class="fas fa-long-arrow-alt-right"></i></a>
-                                </div>
-                            </div>
-                        </div><!-- /pricing__card -->
-                    @endforeach
                 </div>
 
             </div>
