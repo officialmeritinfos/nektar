@@ -828,10 +828,29 @@
             <div class="blog-news__bottom mt-60 mt-sm-50 mt-xs-40">
                 <div class="row mb-minus-30">
                     <div class="col-xl-12 col-md-12 col-12">
-                        <div class="blog-item blog-item-three mb-30">
-                            <rssapp-wall id="38kEBNRCi1vuK60z"></rssapp-wall>
-                            <script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
+{{--                        <div class="blog-item blog-item-three mb-30">--}}
+{{--                            <rssapp-wall id="38kEBNRCi1vuK60z"></rssapp-wall>--}}
+{{--                            <script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>--}}
+{{--                        </div>--}}
+
+                        <!-- TradingView Widget BEGIN -->
+                        <div class="tradingview-widget-container">
+                            <div class="tradingview-widget-container__widget"></div>
+                            <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
+                                {
+                                    "feedMode": "market",
+                                    "market": "stock",
+                                    "isTransparent": false,
+                                    "displayMode": "regular",
+                                    "width": 400,
+                                    "height": 550,
+                                    "colorTheme": "light",
+                                    "locale": "en"
+                                }
+                            </script>
                         </div>
+                        <!-- TradingView Widget END -->
                     </div>
 
 
