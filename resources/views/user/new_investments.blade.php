@@ -57,7 +57,9 @@
                                     name="account">
                                 <option value="">Select a Account</option>
                                 <option value="1"> New Deposit</option>
-                                <option value="2">Account Balance</option>
+                                @if($user->canCompound==1)
+                                    <option value="2">Account Balance</option>
+                                @endif
                             </select>
                         </div>
                         <div class="text-center">

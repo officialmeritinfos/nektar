@@ -463,4 +463,60 @@ class Investors extends Controller
 
         return back()->with('success','Successful');
     }
+
+    public function addBonus(Request $request)
+    {
+        $web = GeneralSetting::where('id',1)->first();
+        $user = Auth::user();
+        $validator = Validator::make($request->input(),[
+            'id'=>['required','numeric'],
+            'amount'=>['required','numeric'],
+        ]);
+
+        if ($validator->fails()){
+            return back()->with('errors',$validator->errors());
+        }
+        $input = $validator->validated();
+
+        $investor = User::where('id',$input['id'])->first();
+
+        $data = [
+            'bonus'=>$investor->bonus+$input['amount']
+        ];
+
+        $update = User::where('id',$input['id'])->update($data);
+        if ($update){
+            //send mail to investor
+            $userMessage = "
+                Your Bonus balance has been credited with $<b>" . $input['amount'] . " .
+            ";
+            //SendInvestmentNotification::dispatch($investor, $userMessage, 'Profit Topup');
+            $investor->notify(new InvestmentMail($investor, $userMessage, 'Bonus Topup'));
+        }
+        return back()->with('success','Profit added');
+    }
+    public function subBonus(Request $request)
+    {
+        $web = GeneralSetting::where('id',1)->first();
+        $user = Auth::user();
+        $validator = Validator::make($request->input(),[
+            'id'=>['required','numeric'],
+            'amount'=>['required','numeric'],
+        ]);
+
+        if ($validator->fails()){
+            return back()->with('errors',$validator->errors());
+        }
+        $input = $validator->validated();
+
+        $investor = User::where('id',$input['id'])->first();
+
+        $data = [
+            'bonus'=>$investor->bonus-$input['amount']
+        ];
+
+        $update = User::where('id',$input['id'])->update($data);
+
+        return back()->with('success','Debt added');
+    }
 }

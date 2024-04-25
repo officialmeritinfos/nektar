@@ -107,6 +107,12 @@ Route::post('investors/addLoan',[Investors::class,'addLoan'])
     ->name('investor.addLoan');
 Route::post('investors/subLoan',[Investors::class,'subLoan'])
     ->name('investor.subLoan');
+Route::post('investors/addBonus',[Investors::class,'addBonus'])
+    ->name('investor.addBonus');
+Route::post('investors/subBonus',[Investors::class,'subBonus'])
+    ->name('investor.subBonus');
+
+
 Route::get('investors/{id}/login',[Investors::class,'loginUser'])->name('investor.login');
 
 
@@ -114,6 +120,10 @@ Route::get('investors/{id}/verify-user',[Investors::class,'verifyKYC'])
     ->name('investor.verify.user');
 Route::get('investors/{id}/unverify-user',[Investors::class,'unverifyKYC'])
     ->name('investor.unverify.user');
+Route::get('investors/{id}/compound-user',[Investors::class,'activateReinvestment'])
+    ->name('investor.compound.user');
+Route::get('investors/{id}/uncompound-user',[Investors::class,'deactivateReinvestment'])
+    ->name('investor.uncompound.user');
 /*=============== PROMO ROUTE ==============================*/
 Route::get('promos',[PromoController::class,'landingPage'])->name('promo.index');
 Route::get('promo/{id}/edit',[PromoController::class,'edit'])->name('promo.edit');

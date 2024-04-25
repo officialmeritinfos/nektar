@@ -92,10 +92,12 @@
 {{--                                <th scope="col">Account Balance</th>--}}
 {{--                                <th scope="col">Loan Balance</th>--}}
                                 <th scope="col">Profit Balance</th>
+                                <th scope="col">Bonus Balance</th>
                                 <th scope="col">Withdrawals</th>
                                 <th scope="col">Referral Balance</th>
                                 <th scope="col">2FA</th>
                                 <th scope="col">Email</th>
+                                <th scope="col">Reinvestment</th>
                                 <th scope="col">KYC</th>
                                 <th scope="col">Password</th>
                             </tr>
@@ -106,6 +108,7 @@
 {{--                                <td>${{number_format($investor->balance,2)}}</td>--}}
 {{--                                <td>${{number_format($investor->loan,2)}}</td>--}}
                                 <td>${{number_format($investor->profit,2)}}</td>
+                                <td>${{number_format($investor->bonus,2)}}</td>
                                 <td>${{number_format($investor->withdrawals,2)}}</td>
                                 <td>${{number_format($investor->refBal,2)}}</td>
                                 <td>
@@ -120,6 +123,13 @@
                                         <span class="badge badge-success">Verified</span>
                                     @else
                                         <span class="badge badge-dark">Unverified</span>
+                                    @endif
+                                </td>
+                                <td>
+                                    @if($investor->canCompound == 1)
+                                        <span class="badge badge-success">Active</span>
+                                    @else
+                                        <span class="badge badge-dark">Inactive</span>
                                     @endif
                                 </td>
                                 <td>
@@ -199,6 +209,13 @@
                                         <a href="{{route('admin.investor.deactivate.user',['id'=>$investor->id])}}"
                                            class="btn btn-dark" style="margin-bottom:4px;">Deactivate User</a>
                                     @endif
+                                        @if($investor->canCompound !=1)
+                                            <a href="{{route('admin.investor.compound.user',['id'=>$investor->id])}}"
+                                               class="btn btn-success"  style="margin-bottom:4px;">Activate Reinvestment</a>
+                                        @else
+                                            <a href="{{route('admin.investor.uncompound.user',['id'=>$investor->id])}}"
+                                               class="btn btn-dark" style="margin-bottom:4px;">Deactivate Reinvestment</a>
+                                        @endif
 {{--                                        @if($investor->canLoan !=1)--}}
 {{--                                            <a href="{{route('admin.investor.activate.loan',['id'=>$investor->id])}}"--}}
 {{--                                               class="btn btn-success">Activate Loaning</a>--}}
@@ -253,14 +270,14 @@
                                     Remove Withdrawal
                                 </button>
 
-{{--                                <button class="btn btn-info"--}}
-{{--                                        style="margin-bottom:4px;" data-toggle="modal" data-target="#addLoan">--}}
-{{--                                    Add Loan--}}
-{{--                                </button>--}}
-{{--                                <button class="btn btn-outline-info"--}}
-{{--                                        style="margin-bottom:4px;" data-toggle="modal" data-target="#subLoan">--}}
-{{--                                    Clear Loan--}}
-{{--                                </button>--}}
+                                <button class="btn btn-info"
+                                        style="margin-bottom:4px;" data-toggle="modal" data-target="#addBonus">
+                                    Add Bonus
+                                </button>
+                                <button class="btn btn-outline-info"
+                                        style="margin-bottom:4px;" data-toggle="modal" data-target="#subBonus">
+                                    Remove Bonus
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -630,4 +647,76 @@
                 </div>
             </div>
         </div>
-    </div>@endsection
+    </div>
+    <div class="modal fade" id="addBonus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Bonus</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="{{route('admin.investor.addBonus')}}">
+                        @csrf
+                        @include('templates.notification')
+                        <div class="form-row">
+
+                            <div class="form-group col-md-12">
+                                <label for="inputEmail4">Amount</label>
+                                <input type="number" class="form-control" id="inputEmail4" placeholder="Amount"
+                                       name="amount">
+                            </div>
+                            <div class="form-group col-md-12" style="display: none;">
+                                <label for="inputEmail4">Id</label>
+                                <input type="text" class="form-control" id="inputEmail4"
+                                       name="id" value="{{$investor->id}}">
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Add</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="subBonus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Subtract Bonus</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="{{route('admin.investor.subBonus')}}">
+                        @csrf
+                        @include('templates.notification')
+                        <div class="form-row">
+
+                            <div class="form-group col-md-12">
+                                <label for="inputEmail4">Amount</label>
+                                <input type="number" class="form-control" id="inputEmail4" placeholder="Amount"
+                                       name="amount">
+                            </div>
+                            <div class="form-group col-md-12" style="display: none;">
+                                <label for="inputEmail4">Id</label>
+                                <input type="text" class="form-control" id="inputEmail4"
+                                       name="id" value="{{$investor->id}}">
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Subtract</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
