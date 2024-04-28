@@ -48,7 +48,7 @@
                 <div class="col-4 col-md-2  d-none d-xl-block">
                     <div class="logo">
                         <a href="{{url('/')}}">
-                            <img src="{{asset('home/images/'.$web->logo)}}" alt="logo"  style="width: 100px;">
+                            <img src="{{asset('home/images/'.$web->logo)}}" alt="logo"  style="width: 80px;">
                         </a>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                                 <div class="header-logo d-xl-none d-block">
                                     <div class="logo">
                                         <a href="{{url('/')}}">
-                                            <img src="{{asset('home/images/'.$web->logo)}}" alt="logo" style="width: 100px;">
+                                            <img src="{{asset('home/images/'.$web->logo)}}" alt="logo" style="width: 80px;">
                                         </a>
                                     </div>
                                 </div>
@@ -192,9 +192,6 @@
 
                     <li>
                         <a href="{{url('service')}}">Services</a>
-                    </li>
-                    <li>
-                        <a href="{{url('nft')}}">NFT</a>
                     </li>
                     <li>
                         <a>Pages</a>
