@@ -48,7 +48,7 @@
                 <div class="col-4 col-md-2  d-none d-xl-block">
                     <div class="logo">
                         <a href="{{url('/')}}">
-                            <img src="{{asset('home/images/'.$web->logo)}}" alt="logo">
+                            <img src="{{asset('home/images/'.$web->logo)}}" alt="logo"  style="width: 100px;">
                         </a>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                                 <div class="header-logo d-xl-none d-block">
                                     <div class="logo">
                                         <a href="{{url('/')}}">
-                                            <img src="{{asset('home/images/'.$web->logo)}}" alt="logo">
+                                            <img src="{{asset('home/images/'.$web->logo)}}" alt="logo" style="width: 100px;">
                                         </a>
                                     </div>
                                 </div>
