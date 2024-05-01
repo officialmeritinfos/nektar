@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\Dashboard;
 use App\Http\Controllers\Admin\Deposits;
 use App\Http\Controllers\Admin\Investments;
 use App\Http\Controllers\Admin\Investors;
+use App\Http\Controllers\Admin\Mails;
 use App\Http\Controllers\Admin\Packages;
 use App\Http\Controllers\Admin\PromoController;
 use App\Http\Controllers\Admin\Settings;
@@ -131,6 +132,11 @@ Route::post('promo/update',[PromoController::class,'updatePromo'])->name('promo.
 Route::get('promo/{id}/delete',[PromoController::class,'delete'])->name('promo.delete');
 Route::get('promo/create',[PromoController::class,'create'])->name('promo.create');
 Route::post('promo/new',[PromoController::class,'newPromo'])->name('promo.new');
+
+//Mail
+Route::get('mail',[Mails::class,'landingPage'])->name('mail.index');
+Route::get('mail/create',[Mails::class,'create'])->name('mail.create');
+Route::post('mail/new',[Mails::class,'newPromo'])->name('mail.new');
 
 //Logout
 Route::get('logout',[Login::class,'logout']);

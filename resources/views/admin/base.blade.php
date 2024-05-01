@@ -94,6 +94,7 @@
                     <a class="collapse-item" href="{{url('admin/coins')}}">Wallet</a>
                     <a class="collapse-item" href="{{url('admin/settings')}}">Settings</a>
                     <a class="collapse-item" href="{{route('admin.promo.index')}}">Promos</a>
+                    <a class="collapse-item" href="{{route('admin.mail.index')}}">Mail</a>
                 </div>
             </div>
         </li>
