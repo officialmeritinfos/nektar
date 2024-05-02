@@ -42,17 +42,17 @@
 <!-- header end -->
 <header class="header-1 header-4">
 
-    <div class="top-header top-header-2">
+    <div class="top-header top-header-2" style="background-color:#0b0b0b;">
         <div class="container-fluid">
             <div class="row align-items-center">
-                <div class="col-4 col-md-2  d-none d-xl-block">
+                <div class="col-4 col-md-2  d-none d-xl-block" style="background-color:#0b0b0b;">
                     <div class="logo">
                         <a href="{{url('/')}}">
-                            <img src="{{asset('home/images/'.$web->logo)}}" alt="logo"  style="width: 80px;">
+                            <img src="{{asset('home/images/'.$web->logo)}}" alt="logo"  style="width: 150px;">
                         </a>
                     </div>
                 </div>
-                <div class=" col-md-12 col-xl-10">
+                <div class=" col-md-12 col-xl-10" >
                     <div class="row">
                         <div class="col-12 d-none d-xl-block">
                             <div class="row align-items-center py-2">
