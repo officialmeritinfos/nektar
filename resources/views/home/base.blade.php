@@ -89,7 +89,7 @@
                                 <div class="header-logo d-xl-none d-block">
                                     <div class="logo">
                                         <a href="{{url('/')}}">
-                                            <img src="{{asset('home/images/'.$web->logo)}}" alt="logo" style="width: 80px;">
+                                            <img src="{{asset('home/images/'.$web->logo)}}" alt="logo" style="width: 100px;">
                                         </a>
                                     </div>
                                 </div>
