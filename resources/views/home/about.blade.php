@@ -92,7 +92,7 @@
                 </div>
                 <div class=" col-lg-12 col-md-12 mx-auto">
                     <div class="section-title section-title_2">
-                        <img src="{{asset('home/images/license.jpg')}}" class="img-fluid d-none d-md-block" alt>
+                        <img src="{{asset('home/images/lice.jpg')}}" class="img-fluid d-none d-md-block" alt>
                     </div>
                 </div>
             </div>
