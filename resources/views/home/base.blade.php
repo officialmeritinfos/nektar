@@ -75,8 +75,8 @@
 
                                         <div class="social-profile">
                                             <ul>
-                                                <li><a href="#"><i class="fab fa-twitter text-success"></i></a></li>
-                                                <span class="text-success"><li><a href="#"><i class="fab fa-instagram text-success"></i></a></li></span>
+                                                <li><a href="https://twitter.com/{{$web->twitter}}" target="_blank"><i class="fab fa-twitter text-success"></i></a></li>
+                                                <span class="text-success"><li><a href="https://instagram.com/{{$web->instagram}}" target="_blank"><i class="fab fa-instagram text-success"></i></a></li></span>
                                             </ul>
                                         </div>
                                     </div>
