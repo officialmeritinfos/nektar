@@ -71,7 +71,7 @@
 
                                 <div class="col-3">
                                     <div class="header-right-socail d-flex justify-content-end align-items-center">
-                                        <h6 class="font-la  fw-600"><span class="text-success">Follow us On:</span></h6>
+                                        <h6 class="font-la  fw-600"><span style="color: #ff9801;">Follow us On:</span></h6>
 
                                         <div class="social-profile">
                                             <ul>
