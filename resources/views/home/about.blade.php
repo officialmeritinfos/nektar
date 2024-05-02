@@ -90,6 +90,11 @@
                         At {{$siteName}}, our core focus areas serve as the guiding principles that underpin everything we do. From investing in sustainable energy projects to engaging with local communities, promoting innovation, and upholding transparency, each aspect of our business reflects our commitment to creating positive change for our planet and society.
                     </p>
                 </div>
+                <div class=" col-lg-12 col-md-12 mx-auto">
+                    <div class="section-title section-title_2">
+                        <img src="{{asset('home/images/license.jpg')}}" class="img-fluid d-none d-md-block" alt>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
