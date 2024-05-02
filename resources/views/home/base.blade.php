@@ -60,24 +60,23 @@
                                     <div class="header-cta">
                                         <ul>
                                             @if(!empty($web->phone))
-                                                <li><a><i class="icon-phone"></i> {{$web->phone}}</a></li>
+                                                <li><a><i class="icon-phone"></i>
+                                                        <span class="text-success">{{$web->phone}}</span></a></li>
                                             @endif
-                                            <li><a href="mailto:{{$web->email}}"><i class="icon-email"></i>{{$web->email}}</a></li>
-                                            <li><a><i class="fal fa-clock"></i> Mon – Sun: 24 Hrs</a></li>
+                                            <li><a href="mailto:{{$web->email}}"><i class="icon-email"></i><span class="text-success">{{$web->email}}</span></a></li>
+                                                <li><a><i class="fal fa-clock"></i> <span class="text-success">Mon – Sun: 24 Hrs</span></a></li>
                                         </ul>
                                     </div>
                                 </div>
 
                                 <div class="col-3">
                                     <div class="header-right-socail d-flex justify-content-end align-items-center">
-                                        <h6 class="font-la  fw-600">Follow On:</h6>
+                                        <h6 class="font-la  fw-600"><span class="text-success">Follow us On:</span></h6>
 
                                         <div class="social-profile">
                                             <ul>
-                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-twitter text-success"></i></a></li>
+                                                <span class="text-success"><li><a href="#"><i class="fab fa-instagram text-success"></i></a></li></span>
                                             </ul>
                                         </div>
                                     </div>
@@ -474,18 +473,18 @@
     var run = setInterval(request, interval);
 
     function request() {
-        clearInterval(run);
-        interval = Math.floor(Math.random() * (40000 - 8000 + 1) + 8000);
-        var country = listCountries[Math.floor(Math.random() * listCountries.length)];
-        var plan = listPlans[Math.floor(Math.random() * listPlans.length)];
-        var msg = 'While you are still contemplating ,an investor from <b>' + country + '</b> ' +
-            'just traded with <a href="javascript:void(0);" onclick="javascript:void(0);">' + plan + ' .</a>';
-        $(".notifier .txt").html(msg);
-        $(".notifier").stop(true).fadeIn(300);
-        window.setTimeout(function() {
-            $(".notifier").stop(true).fadeOut(300);
-        }, 6000);
-        run = setInterval(request, interval);
+        // clearInterval(run);
+        // interval = Math.floor(Math.random() * (40000 - 8000 + 1) + 8000);
+        // var country = listCountries[Math.floor(Math.random() * listCountries.length)];
+        // var plan = listPlans[Math.floor(Math.random() * listPlans.length)];
+        // var msg = 'While you are still contemplating ,an investor from <b>' + country + '</b> ' +
+        //     'just traded with <a href="javascript:void(0);" onclick="javascript:void(0);">' + plan + ' .</a>';
+        // $(".notifier .txt").html(msg);
+        // $(".notifier").stop(true).fadeIn(300);
+        // window.setTimeout(function() {
+        //     $(".notifier").stop(true).fadeOut(300);
+        // }, 6000);
+        // run = setInterval(request, interval);
     }
 </script>
 <!-- end popup massage -->
